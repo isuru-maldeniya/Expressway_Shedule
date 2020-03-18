@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Express Way Bus Times</string>
+    <string name="start">Start</string>
+    <string name="destination">Destination</string>
+    <string name="des1">Powered by SL Traverse</string>
+    <string name="des2">Express Way Bus Shedule</string>
+    <string name="des3">Search</string>
+    <string name="non"></string>
+    <string name="placeholde">Town</string>
+</resources>
