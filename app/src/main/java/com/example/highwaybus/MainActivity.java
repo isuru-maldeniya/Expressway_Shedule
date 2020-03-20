@@ -18,9 +18,11 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         final AutoCompleteTextView actv1=(AutoCompleteTextView) findViewById(R.id.startText);
         final AutoCompleteTextView actv2=(AutoCompleteTextView) findViewById(R.id.desText);
         swap=findViewById(R.id.swapBtn);
+        new AddData().setList();
         swap.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -57,7 +59,6 @@ public class MainActivity extends AppCompatActivity {
     private static final String[] cities=new String[]{"Katunayake","Ja-Ela","Kerawalapitiya","Kadawatha","Kaduwela","Kothalawala","Athurugiriya", "Kottawa","Kahathuduwa","Dodangoda","Gelanigama","Welipenna","KurudugahaHAthamma", "Baddegama","Pinnaduwa","Imaduwa","Kokmaduwa","Godagama","beliaththa","Kasagala","AgunukolaPalassa","Barawakubura","Suriyawewa","Andarawewa"};
 
     public void onClick(View view) {
-        Intent si=new Intent(this,secondView.class);
-        startActivity(si);
+        startActivity(new Intent(this,secondView.class));
     }
 }

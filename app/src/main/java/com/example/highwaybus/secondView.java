@@ -30,7 +30,6 @@ public class secondView extends AppCompatActivity {
     private static final String[] cities=new String[]{"Katunayake","Ja-Ela","Kerawalapitiya","Kadawatha","Kaduwela","Kothalawala","Athurugiriya", "Kottawa","Kahathuduwa","Dodangoda","Gelanigama","Welipenna","KurudugahaHAthamma", "Baddegama","Pinnaduwa","Imaduwa","Kokmaduwa","Godagama","beliaththa","Kasagala","AgunukolaPalassa","Barawakubura","Suriyawewa","Andarawewa"};
 
     public void toMain(View view) {
-        Intent i = new Intent(this, MainActivity.class);
-        startActivity(i);
+        startActivity(new Intent(this, MainActivity.class));
     }
 }
