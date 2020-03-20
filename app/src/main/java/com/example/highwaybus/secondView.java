@@ -27,8 +27,7 @@ public class secondView extends AppCompatActivity {
         });
     }
 
-    private static final String[] cities=new String[]{"Katunayake","Ja-Ela","Kerawalapitiya","Kadawatha","Kaduwela","Kothalawala","Athurugiriya", "Kottawa","Kahathuduwa","Dodangoda","Gelanigama","Welipenna","KurudugahaHAthamma", "Baddegama","Pinnaduwa","Imaduwa","Kokmaduwa","Godagama","beliaththa","Kasagala","AgunukolaPalassa","Barawakubura","Suriyawewa","Andarawewa"};
-
+    private static final String[] cities=new String[]{"Baduraliya","Kadawatha","Bulathsinhala","Gampaha","Nawinna(Maharagama)","Horana","Ingiriya", "Kaluthara","Katubedda(Moratuwa)","Matara","Mathugama","Panadura","Nittambuwa"};
     public void toMain(View view) {
         startActivity(new Intent(this, MainActivity.class));
     }

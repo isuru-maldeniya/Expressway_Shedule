@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
@@ -22,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
         final AutoCompleteTextView actv1=(AutoCompleteTextView) findViewById(R.id.startText);
         final AutoCompleteTextView actv2=(AutoCompleteTextView) findViewById(R.id.desText);
         swap=findViewById(R.id.swapBtn);
-        new AddData().setList();
+//        new AddData().setList();
         swap.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -56,9 +57,16 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
-    private static final String[] cities=new String[]{"Katunayake","Ja-Ela","Kerawalapitiya","Kadawatha","Kaduwela","Kothalawala","Athurugiriya", "Kottawa","Kahathuduwa","Dodangoda","Gelanigama","Welipenna","KurudugahaHAthamma", "Baddegama","Pinnaduwa","Imaduwa","Kokmaduwa","Godagama","beliaththa","Kasagala","AgunukolaPalassa","Barawakubura","Suriyawewa","Andarawewa"};
+    private static final String[] cities=new String[]{"Baduraliya","Kadawatha","Bulathsinhala","Gampaha","Nawinna(Maharagama)","Horana","Ingiriya", "Kaluthara","Katubedda(Moratuwa)","Matara","Mathugama","Panadura","Nittambuwa"};
 
     public void onClick(View view) {
         startActivity(new Intent(this,secondView.class));
+    }
+
+    public void onClick1(View view) {
+        Log.d("appBus","not entered");
+        Intent ti=new Intent(this,ExpandableList1.class);
+        Log.d("appBus","not entered_1");
+        startActivity(ti);
     }
 }

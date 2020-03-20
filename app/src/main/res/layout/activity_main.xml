@@ -88,6 +88,7 @@
         android:layout_marginStart="124dp"
         android:layout_marginLeft="124dp"
         android:layout_marginTop="37dp"
+        android:onClick="onClick1"
         android:background="@android:color/background_light"
         android:text="@string/des3"
         android:textColor="@color/powedClr"
