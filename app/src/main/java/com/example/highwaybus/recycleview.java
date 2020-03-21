@@ -111,5 +111,6 @@ public class recycleview extends AppCompatActivity {
         ResAdapter adapter=new ResAdapter(this,s1,s2);
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
+
     }
 }
