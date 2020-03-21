@@ -44,82 +44,70 @@ public class ExpandableList1 extends AppCompatActivity {
             s2=extras.getString("end");
 
         }
-
-        Log.d("sppBus","we got"+s1+"\t"+s2);
-
+//        Log.d("sppBus","we got"+s1+"\t"+s2);
         String search=s1+"_"+s2;
         setAdapter(search);
+        Log.d("appBus","content of list "+0+"  :"+dataList.size());
 
-        Log.d("appBus","now We are in");
+
+//        Log.d("appBus","now We are in");
         listView=(ExpandableListView) findViewById(R.id.lvExpand);
-//        initData();
-        Log.d("appBus","now We are out of the firebaseAdaptor");
         listAdapter=new ExpandableListAdaptor(this,dataList,hashMap);
-
+        printData();
     }
-
     private void setAdapter(String search) {
-        hashMap=new HashMap<>();
-        dataList=new ArrayList<>();
-        Log.d("appBus","now We are out of the firebaseSnapshot");
+        hashMap=new HashMap<String, List<String>>();
+        dataList=new ArrayList<String>();
         reference.child(search).addListenerForSingleValueEvent(new ValueEventListener() {
-//            Log.d("appBus","now We are out of the firebaseSnapshot");
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                HashMap<Integer ,List<String>>tmp=new HashMap<>();
                 int pos=0;
                 for(DataSnapshot snapshot :dataSnapshot.getChildren()){
-                    Log.d("appBus","now We are out of the firebaseSnapshot");
-                    System.out.println("infirebase");
-                    List<String> s=new ArrayList<>();
-                    s.add("Start time\t:"+snapshot.child("start_time").getValue(String.class));
-                    s.add("Start form\t:"+snapshot.child("start_station").getValue(String.class));
-                    s.add("Go to\t:"+snapshot.child("end_town").getValue(String.class));
-                    s.add("Arrive to "+s2+"\t:"+snapshot.child("arriaval_time").getValue(String.class));
-                    s.add("Bus number\t:"+snapshot.child("bus_bumber").getValue(String.class));
-                    s.add("Contact\t:"+snapshot.child("bus_contact").getValue(String.class));
+                    String Start_time="Start time\t :"+snapshot.child("start_time").getValue(String.class);
+                    String Start_from="Start from\t :"+snapshot.child("start_station").getValue(String.class);
+                    String go_to="Go to\t :"+snapshot.child("end_town").getValue(String.class);
+                    String arrive_time="Arrive time("+s2+")\t :"+snapshot.child("arriaval_time").getValue(String.class);
+                    String contact="Contact\t :"+snapshot.child("bus_contact").getValue(String.class);
+                    String bus_num="Number\t :"+snapshot.child("bus_bumber").getValue(String.class);
+                    Log.d("appBus",Start_time);
+                    Log.d("appBus",Start_from);
+                    Log.d("appBus",go_to);
+                    Log.d("appBus",arrive_time);
+                    Log.d("appBus","///////////////////////////////");
+                    List<String> datass=new ArrayList<>();
+                    datass.add(Start_time);
+                    datass.add(Start_from);
+                    datass.add(go_to);
+                    datass.add(arrive_time);
+                    datass.add(contact);
+                    datass.add(bus_num);
                     dataList.add(snapshot.child("start_time").getValue(String.class));
-                    hashMap.put(dataList.get(pos),s);
+                    tmp.put(pos,datass);
                     pos++;
                 }
+                pos=0;
+                for(List<String> val: tmp.values()){
+                    hashMap.put(dataList.get(pos),val);
+                    pos++;
+                }
+
             }
 
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
-
+                Log.d("appBus","The error is"+databaseError.toString());
             }
         });
     }
 
-    private void initData() {
-        Log.d("appBus","now We are in init()");
-        dataList=new ArrayList<>();
-        hashMap= new HashMap<String, List<String>>();
+    private void printData(){
+        int i=0;
+        Log.d("appBus","we are in dataPrint");
+        while (i<dataList.size()){
 
-        dataList.add("test1");
-        dataList.add("test2");
-        dataList.add("test3");
-
-        List<String> l1=new ArrayList<>();
-        l1.add("test1_item1");
-        l1.add("test1_item2");
-        l1.add("test1_item3");
-        l1.add("test1_item4");
-
-        List<String> l2=new ArrayList<>();
-        l2.add("test2_item1");
-        l2.add("test2_item2");
-        l2.add("test2_item3");
-        l2.add("test2_item4");
-
-        List<String> l3=new ArrayList<>();
-        l3.add("test3_item1");
-        l3.add("test3_item2");
-        l3.add("test3_item3");
-        l3.add("test3_item4");
-
-        hashMap.put(dataList.get(0),l1);
-        hashMap.put(dataList.get(1),l2);
-        hashMap.put(dataList.get(2),l3);
-        Log.d("appBus","now We are in the end of init()");
+            Log.d("appBus","content of list "+i+"  :"+dataList.get(i));
+            i++;
+        }
     }
 }
