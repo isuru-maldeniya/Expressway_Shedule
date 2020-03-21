@@ -24,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
         final AutoCompleteTextView actv2=(AutoCompleteTextView) findViewById(R.id.desText);
         swap=findViewById(R.id.swapBtn);
 //        new AddData().setList();
+//        new AddDataTown().setList();
         swap.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

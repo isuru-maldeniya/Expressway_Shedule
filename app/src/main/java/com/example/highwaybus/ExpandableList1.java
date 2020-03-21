@@ -25,8 +25,8 @@ import java.util.List;
 public class ExpandableList1 extends AppCompatActivity {
     private ExpandableListView listView;
     private ExpandableListAdapter listAdapter;
-    private List<String> dataList;
-    private HashMap<String,List<String>> hashMap;
+    List<String> dataList;
+    HashMap<String,List<String>> hashMap;
     DatabaseReference reference;
     String s2;
     String s1;
@@ -62,6 +62,8 @@ public class ExpandableList1 extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 HashMap<Integer ,List<String>>tmp=new HashMap<>();
+                HashMap<String ,List<String>>tmp2=new HashMap<>();
+                List<String> stTemp=new ArrayList<String>();
                 int pos=0;
                 for(DataSnapshot snapshot :dataSnapshot.getChildren()){
                     String Start_time="Start time\t :"+snapshot.child("start_time").getValue(String.class);
@@ -82,15 +84,20 @@ public class ExpandableList1 extends AppCompatActivity {
                     datass.add(arrive_time);
                     datass.add(contact);
                     datass.add(bus_num);
+                    stTemp.add(snapshot.child("start_time").getValue(String.class));
                     dataList.add(snapshot.child("start_time").getValue(String.class));
                     tmp.put(pos,datass);
                     pos++;
                 }
                 pos=0;
                 for(List<String> val: tmp.values()){
+                    Log.d("appBus1","this is 3 content"+val.get(3));
+                    tmp2.put(stTemp.get(pos),val);
                     hashMap.put(dataList.get(pos),val);
                     pos++;
                 }
+//                dataList=stTemp;
+//                hashMap=tmp2;
 
             }
 

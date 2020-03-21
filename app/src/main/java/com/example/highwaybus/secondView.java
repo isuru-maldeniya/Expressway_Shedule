@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
+import android.widget.EditText;
 
 public class secondView extends AppCompatActivity {
 
@@ -30,5 +31,12 @@ public class secondView extends AppCompatActivity {
     private static final String[] cities=new String[]{"Baduraliya","Kadawatha","Bulathsinhala","Gampaha","Nawinna(Maharagama)","Horana","Ingiriya", "Kaluthara","Katubedda(Moratuwa)","Matara","Mathugama","Panadura","Nittambuwa"};
     public void toMain(View view) {
         startActivity(new Intent(this, MainActivity.class));
+    }
+
+    public void onClick1(View view) {
+        EditText text=findViewById(R.id.townText);
+        Intent intent = new Intent(this, recycleview.class);
+        intent.putExtra("start",text.getText().toString());
+        startActivity(intent);
     }
 }

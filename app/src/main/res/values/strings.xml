@@ -7,4 +7,37 @@
     <string name="des3">Search</string>
     <string name="non"></string>
     <string name="placeholde">Town</string>
+    
+    <string-array name="arr1">
+        <item>item1</item>
+        <item>item2</item>
+        <item>item3</item>
+        <item>item4</item>
+        <item>item5</item>
+        <item>item6</item>
+        <item>item7</item>
+        <item>item8</item>
+        <item>item9</item>
+        <item>item10</item>
+        <item>item11</item>
+        <item>item12</item>
+        <item>item13</item>
+        <item>item14</item>
+    </string-array>
+    <string-array name="arr2">
+        <item>item1.2</item>
+        <item>item2.2</item>
+        <item>item3.2</item>
+        <item>item4.2</item>
+        <item>item5.2</item>
+        <item>item6.2</item>
+        <item>item7.2</item>
+        <item>item8.2</item>
+        <item>item9.2</item>
+        <item>item10.2</item>
+        <item>item11.2</item>
+        <item>item12.2</item>
+        <item>item13.2</item>
+        <item>item14.2</item>
+    </string-array>
 </resources>
