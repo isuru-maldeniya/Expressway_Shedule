@@ -65,7 +65,11 @@ public class MainActivity extends AppCompatActivity {
 
     public void onClick1(View view) {
         Log.d("appBus","not entered");
+        final AutoCompleteTextView actv3=(AutoCompleteTextView) findViewById(R.id.startText);
+        final AutoCompleteTextView actv4=(AutoCompleteTextView) findViewById(R.id.desText);
         Intent ti=new Intent(this,ExpandableList1.class);
+        ti.putExtra("start",actv3.getText().toString());
+        ti.putExtra("end",actv4.getText().toString());
         Log.d("appBus","not entered_1");
         startActivity(ti);
     }
