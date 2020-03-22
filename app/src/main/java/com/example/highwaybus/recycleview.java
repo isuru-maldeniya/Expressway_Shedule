@@ -59,44 +59,44 @@ public class recycleview extends AppCompatActivity {
 
 
 //        final Context c=this;
-        reference.child(s3).addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                List<String> s5=new ArrayList<>();
-                Log.d("appBus","now we are in");
-                for(DataSnapshot snapshot :dataSnapshot.getChildren()){
-                    String t=snapshot.child("town").getValue().toString();
-                    s1.add(String.valueOf(t));
-                    Log.d("appBus","now we are in"+snapshot.child("town").getValue().toString());
-                }
-//                ResAdapter adapter=new ResAdapter(this,s1,s2);
-//                recyclerView.setAdapter(adapter);
-//                recyclerView.setLayoutManager(new LinearLayoutManager(this));
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-                Log.d("appBus","Error is"+databaseError.toString());
-            }
-        });
-
-
-//        s1.add("Item1");
-//        s1.add("Item2");
-//        s1.add("Item3");
-//        s1.add("Item4");
-//        s1.add("Item5");
-//        s1.add("Item6");
-//        s1.add("Item7");
-//        s1.add("Item8");
-//        s1.add("Item9");
-//        s1.add("Item10");
-//        s1.add("Item11");
-//        s1.add("Item12");
-//        s1.add("Item13");
-//        s1.add("Item14");
-//        s1.add("Item15");
+//        reference.child(s3).addListenerForSingleValueEvent(new ValueEventListener() {
+//            @Override
+//            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+//                List<String> s5=new ArrayList<>();
+//                Log.d("appBus","now we are in");
+//                for(DataSnapshot snapshot :dataSnapshot.getChildren()){
+//                    String t=snapshot.child("town").getValue().toString();
+//                    s1.add(String.valueOf(t));
+//                    Log.d("appBus","now we are in"+snapshot.child("town").getValue().toString());
+//                }
+////                ResAdapter adapter=new ResAdapter(this,s1,s2);
+////                recyclerView.setAdapter(adapter);
+////                recyclerView.setLayoutManager(new LinearLayoutManager(this));
+//            }
 //
+//            @Override
+//            public void onCancelled(@NonNull DatabaseError databaseError) {
+//                Log.d("appBus","Error is"+databaseError.toString());
+//            }
+//        });
+
+
+        s1.add(s3);
+        s1.add(s3);
+        s1.add(s3);
+        s1.add(s3);
+        s1.add(s3);
+        s1.add(s3);
+        s1.add(s3);
+        s1.add(s3);
+        s1.add(s3);
+        s1.add(s3);
+        s1.add(s3);
+        s1.add(s3);
+        s1.add(s3);
+        s1.add(s3);
+        s1.add(s3);
+
 
 
 //        s1=getResources().getStringArray(R.array.arr1);

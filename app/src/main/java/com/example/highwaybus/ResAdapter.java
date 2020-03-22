@@ -1,12 +1,14 @@
 package com.example.highwaybus;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
@@ -32,7 +34,18 @@ public class ResAdapter extends RecyclerView.Adapter<ResAdapter.ResViewholder> {
     @Override
     public void onBindViewHolder(@NonNull ResViewholder holder, int position) {
         holder.t1.setText(s1.get(position));
-        holder.t2.setText("");
+        holder.t2.setText(s2.get(position));
+        final int pos=position;
+
+        holder.layout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(context,ExpandableList1.class);
+                intent.putExtra("start",s1.get(pos));
+                intent.putExtra("end",s2.get(pos));
+                context.startActivity(intent);
+            }
+        });
     }
 
     @Override
@@ -42,10 +55,12 @@ public class ResAdapter extends RecyclerView.Adapter<ResAdapter.ResViewholder> {
 
     public class ResViewholder extends RecyclerView.ViewHolder{
         TextView t1,t2;
+        ConstraintLayout layout;
         public ResViewholder(@NonNull View itemView) {
             super(itemView);
             t1=itemView.findViewById(R.id.txt1);
             t2=itemView.findViewById(R.id.txt2);
+            layout=itemView.findViewById(R.id.rowLayout);
         }
     }
 }
