@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class secondView extends AppCompatActivity {
 
@@ -35,8 +36,21 @@ public class secondView extends AppCompatActivity {
 
     public void onClick1(View view) {
         EditText text=findViewById(R.id.townText);
-        Intent intent = new Intent(this, recycleview.class);
-        intent.putExtra("start",text.getText().toString());
-        startActivity(intent);
+        String start=text.getText().toString();
+
+        if(isNullOrEmpty(start)){
+            Toast.makeText(this,"The field is empty",Toast.LENGTH_SHORT).show();
+        }else{
+            Intent intent = new Intent(this, recycleview.class);
+            intent.putExtra("start",start);
+            startActivity(intent);
+        }
+
+    }
+
+    public static boolean isNullOrEmpty(String str) {
+        if(str != null && !str.isEmpty())
+            return false;
+        return true;
     }
 }

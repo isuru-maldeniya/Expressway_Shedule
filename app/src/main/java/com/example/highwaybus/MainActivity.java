@@ -11,6 +11,7 @@ import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
     Button swap;
@@ -68,12 +69,28 @@ public class MainActivity extends AppCompatActivity {
 //        Log.d("appBus","not entered");
         final AutoCompleteTextView actv3=(AutoCompleteTextView) findViewById(R.id.startText);
         final AutoCompleteTextView actv4=(AutoCompleteTextView) findViewById(R.id.desText);
+        String start=actv3.getText().toString();
+        String end=actv4.getText().toString();
 
-        
-        Intent ti=new Intent(this,ExpandableList1.class);
-        ti.putExtra("start",actv3.getText().toString());
-        ti.putExtra("end",actv4.getText().toString());
-//        Log.d("appBus","not entered_1");
-        startActivity(ti);
+        if(isNullOrEmpty(end) && isNullOrEmpty(start)){
+            Toast.makeText(this,"Both fields are empty",Toast.LENGTH_SHORT).show();
+        }else if(isNullOrEmpty(end)){
+            Toast.makeText(this,"Destination field is empty",Toast.LENGTH_SHORT).show();
+        }else if(isNullOrEmpty(start)){
+            Toast.makeText(this,"Start field is empty",Toast.LENGTH_SHORT).show();
+        }else {
+            Intent ti=new Intent(this,ExpandableList1.class);
+            ti.putExtra("start",start);
+            ti.putExtra("end",end);
+            startActivity(ti);
+        }
+
+
+    }
+
+    public static boolean isNullOrEmpty(String str) {
+        if(str != null && !str.isEmpty())
+            return false;
+        return true;
     }
 }

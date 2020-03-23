@@ -3,14 +3,14 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@color/colorPrimary"
+    android:background="@color/cardview_light_background"
     android:padding="8dp">
 
     <TextView
         android:id="@+id/listViewHeader"
         android:paddingLeft="?android:attr/expandableListPreferredItemPaddingLeft"
         android:textSize="16dp"
-        android:textColor="@color/common_google_signin_btn_text_dark_focused"
+        android:textColor="@color/powedClr"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 
