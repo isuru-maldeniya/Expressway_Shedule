@@ -21,16 +21,17 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="match_parent">
 
             <TextView
                 android:id="@+id/txt2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="120dp"
-                android:layout_marginLeft="120dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginRight="20dp"
                 android:text="text123"
-                android:textSize="25sp"
+                android:textSize="16dp"
+                android:textColor="@color/palcholderClr"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -41,12 +42,11 @@
                 android:id="@+id/txt1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="2dp"
-                android:layout_marginLeft="2dp"
-                android:layout_marginEnd="2dp"
-                android:layout_marginRight="2dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginLeft="10dp"
                 android:text="text345"
-                android:textSize="25sp"
+                android:textColor="@color/palcholderClr"
+                android:textSize="16dp"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/txt2"

@@ -33,8 +33,8 @@ public class ResAdapter extends RecyclerView.Adapter<ResAdapter.ResViewholder> {
 
     @Override
     public void onBindViewHolder(@NonNull ResViewholder holder, int position) {
-        holder.t1.setText(s1.get(position));
-        holder.t2.setText(s2.get(position));
+        holder.t1.setText(s2.get(position));
+        holder.t2.setText(s1.get(position));
         final int pos=position;
 
         holder.layout.setOnClickListener(new View.OnClickListener() {
