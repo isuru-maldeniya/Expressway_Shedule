@@ -98,7 +98,7 @@ public class ExpandableList1 extends AppCompatActivity {
                     datass.add("Contact\t :" + snapshot.child("bus_contact").getValue(String.class));
                     datass.add("Number\t :" + snapshot.child("bus_bumber").getValue(String.class));
                     stTemp.add(snapshot.child("start_time").getValue(String.class));
-                    dataList.add(snapshot.child("start_time").getValue(String.class));
+                    dataList.add("@ "+snapshot.child("start_time").getValue(String.class));
                     tmp.put(pos, datass);
                     pos++;
                 }
