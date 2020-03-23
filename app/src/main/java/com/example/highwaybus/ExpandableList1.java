@@ -68,7 +68,8 @@ public class ExpandableList1 extends AppCompatActivity {
             public void onCallBack(List<String> l1, HashMap<String, List<String>> hMAp) {
                 Log.d("appBus", "dataList :" + l1.toString());
                 Log.d("appBus", "dataList :" + hMAp.get(l1.get(0)).toString());
-                listAdapter=new ExpandableListAdaptor(context,dataList,hashMap);
+                listAdapter=new ExpandableListAdaptor(context,l1,hMAp);
+                listView.setAdapter(listAdapter);
             }
         });
         /////////////////////cut_Lower_bound

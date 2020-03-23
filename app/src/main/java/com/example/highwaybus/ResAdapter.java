@@ -50,7 +50,7 @@ public class ResAdapter extends RecyclerView.Adapter<ResAdapter.ResViewholder> {
 
     @Override
     public int getItemCount() {
-        return s1.size()-1;
+        return s1.size();
     }
 
     public class ResViewholder extends RecyclerView.ViewHolder{
