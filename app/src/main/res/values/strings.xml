@@ -5,10 +5,10 @@
     <string name="destination">Destination</string>
     <string name="des1">Powered by SL Traverse</string>
     <string name="desView">Destinations</string>
-    <string name="des2">Express Way Bus Shedule</string>
+    <string name="des2">Express Way Bus Schedule</string>
     <string name="des3">Search</string>
     <string name="non"></string>
-    <string name="expandableTxt">Buses Avilable</string>
+    <string name="expandableTxt">Buses Available</string>
     <string name="placeholde">Town</string>
     
     <string-array name="arr1">
