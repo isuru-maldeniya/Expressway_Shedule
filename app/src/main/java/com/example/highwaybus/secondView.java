@@ -31,7 +31,7 @@ public class secondView extends AppCompatActivity {
 
     private static final String[] cities=new String[]{"Baduraliya","Kadawatha","Bulathsinhala","Gampaha","Nawinna(Maharagama)","Horana","Ingiriya", "Kaluthara","Katubedda(Moratuwa)","Matara","Mathugama","Panadura","Nittambuwa"};
     public void toMain(View view) {
-        startActivity(new Intent(this, MainActivity.class));
+        startActivity(new Intent(this, FlashScreenWindow.class));
     }
 
     public void onClick1(View view) {

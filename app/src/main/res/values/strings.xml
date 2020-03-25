@@ -10,7 +10,7 @@
     <string name="non"></string>
     <string name="expandableTxt">Buses Available</string>
     <string name="placeholde">Town</string>
-    
+
     <string-array name="arr1">
         <item>item1</item>
         <item>item2</item>

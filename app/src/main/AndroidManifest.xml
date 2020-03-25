@@ -6,24 +6,34 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/ic_launcher_2"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@mipmap/ic_launcher_2_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".recycleview" android:configChanges="orientation"
-            android:screenOrientation="portrait"></activity>
+        <activity android:name=".FlashScreenWindow"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait" >
+
+        </activity>
+        <activity
+            android:name=".recycleview"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait" />
         <activity android:name=".ExpandableList1" />
-        <activity android:name=".secondView" android:configChanges="orientation"
+        <activity
+            android:name=".secondView"
+            android:configChanges="orientation"
             android:screenOrientation="portrait">
+<!--            <intent-filter>-->
+<!--                <action android:name="android.intent.action.MAIN" />-->
 
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity >
-        <activity android:name=".MainActivity" android:configChanges="orientation"
+<!--                <category android:name="android.intent.category.LAUNCHER" />-->
+<!--            </intent-filter>-->
+        </activity>
+        <activity
+            android:name=".MainActivity"
+            android:configChanges="orientation"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
